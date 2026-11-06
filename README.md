@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <b>Tradução completa, nativa e definitiva para Super Alloy Ranger (PC)</b><br>
+  <b>Tradução completa, nativa  para Super Alloy Ranger (PC)</b><br>
   Compatível com as versões <b>Steam</b> e <b>Epic Games Store</b> (x64)
 </p>
 
@@ -13,11 +13,9 @@
 
 ## 🌟 Destaques da Tradução
 
-- **100% dos Textos Traduzidos:** História completa, cutscenes, diálogos de NPCs, descrições de armas, equipamentos, missões e conquistas.
+- **Textos Traduzidos:** História completa, cutscenes, diálogos de NPCs, descrições de armas, equipamentos, missões e conquistas.
 - **Legendas de Botões Nativas:** Todos os prompts de comandos nos menus e tutoriais foram traduzidos e adaptados dinamicamente (`Pulo`, `Ataque`, `Voltar`, `Especial`, `Confirmar`, etc.).
-- **Ajuste Dinâmico de Layout:** O motor de tradução calcula automaticamente a largura dos botões e afasta as setas de seleção, evitando que textos fiquem cortados ou sobrepostos.
-- **Revisão Minuciosa de Lore:** Termos, gírias e pronomes foram revisados e polidos de acordo com o contexto dos personagens (Kelly, Nº 02, Rambos, etc.).
-- **Mod Nativo e Ultra Leve:** Sem dependência de ferramentas instáveis como BepInEx ou injeções lentas de OCR/AutoTranslator. Funciona de forma 100% nativa no Unity com desempenho máximo.
+- **Mod Nativo Leve:** Sem dependência de ferramentas instáveis como BepInEx ou injeções lentas de OCR/AutoTranslator. Funciona de forma 100% nativa no Unity com desempenho máximo.
 - **Instalador Automático com 1 Clique:** Acompanha instalador gráfico com plano de fundo personalizado, detecção automática do jogo e sistema de backup/restauração.
 
 ---
@@ -70,5 +68,5 @@
 ## 📜 Licença e Créditos
 
 - Jogo original desenvolvido por **Alloy-K Studio** e publicado pela **Gamera Games**.
-- Tradução e engenharia reversa por **Antigravity**.
+- Tradução e engenharia feito com auxilio do  **Antigravity**.
 - Tradução feita de fã para fãs, sem fins lucrativos. Apoie os desenvolvedores adquirindo o jogo original!
