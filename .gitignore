@@ -1,0 +1,11 @@
+# Build / Temp files
+*.obj
+*.pdb
+*.tmp
+*.bak
+*~
+bin/
+obj/
+.vs/
+*.suo
+*.user
