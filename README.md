@@ -30,9 +30,11 @@
 5. Pronto! Você já pode clicar em **Jogar Agora** ou abrir o jogo diretamente pela Steam / Epic Games.
 
 ### Opção 2: Instalação Manual (Arquivo ZIP)
-1. Baixe o arquivo `SuperAlloyRanger_Traducao_PTBR.zip`.
-2. Extraia o conteúdo e copie a pasta `Super.Alloy.Ranger_Data` para a pasta raiz do seu jogo (onde fica o `Super.Alloy.Ranger.exe`).
-3. Substitua os arquivos quando o Windows solicitar.
+1. Baixe o arquivo `SuperAlloyRanger_Traducao_PTBR.zip` e extraia os arquivos.
+2. Copie a pasta `Super.Alloy.Ranger_Data` da raiz para a pasta do jogo.
+3. Conforme a sua plataforma:
+   - **Steam:** Copie o arquivo dentro de `Versao_Steam\Super.Alloy.Ranger_Data\Managed\Assembly-CSharp.dll` e cole na pasta `Super.Alloy.Ranger_Data\Managed` do seu jogo (substituindo o arquivo original).
+   - **Epic Games:** Copie o arquivo dentro de `Versao_EpicGames\Super.Alloy.Ranger_Data\Managed\Assembly-CSharp.dll` e cole na pasta `Super.Alloy.Ranger_Data\Managed` do seu jogo (substituindo o arquivo original).
 4. Inicie o jogo normalmente.
 
 ---
@@ -49,13 +51,16 @@
 ```text
 ├── assets/
 │   ├── app_icon.ico           # Ícone oficial do jogo
-│   └── installer_bg.jpg       # Arte visual do instalador
+│   ├── installer_bg.jpg       # Arte visual do instalador
+│   ├── Assembly-CSharp.steam.dll # DLL injetada para a versão Steam
+│   ├── Assembly-CSharp.epic.dll  # DLL injetada para a versão Epic Games
+│   └── SARTranslator.dll      # Mod nativo de tradução compilado
 ├── release/
 │   ├── Instalador_Traducao_SuperAlloyRanger_PTBR.exe
 │   └── SuperAlloyRanger_Traducao_PTBR.zip
 ├── src/
 │   ├── SARTranslator.cs       # Código-fonte da DLL de tradução nativa
-│   ├── Installer.cs           # Código-fonte do instalador gráfico (WinForms)
+│   ├── Installer.cs           # Código-fonte do instalador gráfico multi-plataforma
 │   └── patch_all.ps1          # Script de injeção IL (Mono.Cecil)
 ├── translation_ptbr.txt       # Dicionário de tradução completo (870+ entradas)
 ├── translation_ptbr.json      # Dicionário em formato JSON
@@ -68,5 +73,5 @@
 ## 📜 Licença e Créditos
 
 - Jogo original desenvolvido por **Alloy-K Studio** e publicado pela **Gamera Games**.
-- Tradução e engenharia feito com auxilio do  **Antigravity**.
+- Tradução e Modding por **RexThalazar** (com auxílio do **Antigravity**).
 - Tradução feita de fã para fãs, sem fins lucrativos. Apoie os desenvolvedores adquirindo o jogo original!

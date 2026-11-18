@@ -2,54 +2,64 @@
      TRADUÇÃO EM PORTUGUÊS DO BRASIL (PT-BR) - SUPER ALLOY RANGER
 ========================================================================
 
-Versão: 1.1 (Definitiva / Nativa com Legendas de Botões)
-Compatibilidade: Epic Games Store e Steam (x64)
-Criador: Tradução e Modding Nativo por Antigravity
+Versão: 1.2 (Multiplataforma: Suporte Total a Steam e Epic Games)
+Compatibilidade: Steam e Epic Games Store (Windows x64)
+Criador: RexThalazar
 
 ------------------------------------------------------------------------
 1. SOBRE ESTA TRADUÇÃO
 ------------------------------------------------------------------------
-Diferente de mods genéricos que sofrem com atraso, incompatibilidade ou
-bugs no efeito de máquina de escrever dos diálogos, esta tradução é NATIVA.
-Ela intercepta o núcleo de dados do jogo antes do texto ser exibido:
+Esta é a tradução definitiva de Super Alloy Ranger para Português do Brasil!
+Ela funciona como um Mod Nativo ultraleve e de alto desempenho:
 - 100% dos textos traduzidos (História, Chefes, NPCs, Conquistas, Missões,
-  Habilidades, Menus e Diálogos de Cutscenes).
-- Legendas dos botões dinâmicos traduzidas:
+  Habilidades, Menus, Itens e Diálogos de Cutscenes).
+- Legendas de botões dinâmicos traduzidas:
     * Jump    -> Pulo
     * Attack  -> Ataque
     * Back    -> Voltar
     * Skill   -> Especial
     * Apply   -> Confirmar
-    * e todos os outros comandos de controle!
-- Revisão cuidadosa de lore, pronomes corretos (Kelly, Nº 02, Nº 03) e termos técnicos.
-- Sem necessidade de BepInEx nem injeções instáveis.
-- Desempenho 100% fluido e compatível com qualquer PC.
+    * e todos os comandos de controle!
+- Totalmente compatível com as versões Steam e Epic Games Store.
+- Não necessita de BepInEx nem inicializadores externos.
+- Não afeta conquistas nem desempenho.
 
 ------------------------------------------------------------------------
-2. COMO INSTALAR
+2. INSTALAÇÃO AUTOMÁTICA (RECOMENDADA)
 ------------------------------------------------------------------------
-1. Abra a pasta onde o seu jogo está instalado (onde fica o "Super.Alloy.Ranger.exe").
-2. Copie a pasta "Super.Alloy.Ranger_Data" deste pacote e cole dentro da pasta do jogo.
-3. Se o Windows perguntar, escolha "Substituir os arquivos no destino".
-4. Pronto! Inicie o jogo normalmente.
+1. Execute o arquivo "Instalador_Traducao_SuperAlloyRanger_PTBR.exe".
+2. O instalador detectará automaticamente se seu jogo é da Steam ou da Epic Games.
+3. Clique em "Instalar Tradução".
+4. Pronto! Basta clicar em "Jogar Agora" ou abrir o jogo diretamente pelo seu launcher.
 
 ------------------------------------------------------------------------
-3. AJUSTES E EDIÇÃO DE TEXTO
+3. INSTALAÇÃO MANUAL
 ------------------------------------------------------------------------
-Todas as falas e legendas traduzidas ficam no arquivo de texto:
+Caso prefira instalar manualmente sem o instalador:
+1. Copie a pasta "Super.Alloy.Ranger_Data" da raiz deste pacote para a pasta do seu jogo.
+2. Escolha a sua versão:
+   - Se seu jogo é da STEAM:
+     Entre na pasta "Versao_Steam\Super.Alloy.Ranger_Data\Managed",
+     copie o arquivo "Assembly-CSharp.dll" e cole na pasta "Super.Alloy.Ranger_Data\Managed" do seu jogo (substituindo o original).
+   - Se seu jogo é da EPIC GAMES:
+     Entre na pasta "Versao_EpicGames\Super.Alloy.Ranger_Data\Managed",
+     copie o arquivo "Assembly-CSharp.dll" e cole na pasta "Super.Alloy.Ranger_Data\Managed" do seu jogo (substituindo o original).
+3. Inicie o jogo normalmente.
+
+------------------------------------------------------------------------
+4. AJUSTES E PERSONALIZAÇÃO DE TEXTO
+------------------------------------------------------------------------
+Todas as falas e legendas traduzidas ficam no arquivo:
 "Super.Alloy.Ranger_Data\translation_ptbr.txt"
-
-- Você pode abrir esse arquivo no Bloco de Notas para ler ou personalizar
-  qualquer diálogo ou legenda.
-- Caso a fonte pixelada não renderize algum acento (como ç, ã, é), basta
-  abrir o arquivo e alterar a linha:
+- Você pode abrir esse arquivo com o Bloco de Notas para personalizar textos se desejar.
+- Caso a fonte pixelada de algum monitor não renderize acentos, você pode alterar:
   RemoveAccents=false
   para:
   RemoveAccents=true
 
 ------------------------------------------------------------------------
-4. COMO DESINSTALAR
+5. COMO DESINSTALAR
 ------------------------------------------------------------------------
-Basta restaurar a "Assembly-CSharp.dll" original (ou verificar a integridade
-dos arquivos no inicializador da Epic Games / Steam).
+- Pelo Instalador: Abra o instalador e clique no botão "Restaurar Original".
+- Manualmente: Verifique a integridade dos arquivos na Steam ou Epic Games, ou restaure o arquivo "Assembly-CSharp.dll.bak_ptbr" renomeando-o para "Assembly-CSharp.dll".
 ========================================================================

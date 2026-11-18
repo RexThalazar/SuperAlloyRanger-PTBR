@@ -237,12 +237,12 @@ namespace SuperAlloyRangerTranslator
             using (Font f1 = new Font("Segoe UI", 12f, FontStyle.Bold))
             using (SolidBrush b1 = new SolidBrush(Color.FromArgb(0, 229, 255)))
             {
-                g.DrawString("TRADUÇÃO PT-BR v1.1", f1, b1, 32, 22);
+                g.DrawString("TRADUÇÃO PT-BR v1.2", f1, b1, 32, 22);
             }
             using (Font f2 = new Font("Segoe UI", 8.5f, FontStyle.Regular))
             using (SolidBrush b2 = new SolidBrush(Color.FromArgb(210, 225, 240)))
             {
-                g.DrawString("Super Alloy Ranger • Mod Nativo Integrado", f2, b2, 33, 44);
+                g.DrawString("Super Alloy Ranger • Steam & Epic Games", f2, b2, 33, 44);
             }
 
             // 3. Draw Bottom Frosted Glass Card for Controls
@@ -295,8 +295,10 @@ namespace SuperAlloyRangerTranslator
 
             if (valid)
             {
+                string platform = DetectGamePlatform(p);
+                string platformName = (platform == "epic") ? "Epic Games" : "Steam";
                 lblPathStatus.ForeColor = Color.FromArgb(0, 230, 118);
-                lblPathStatus.Text = "✓ Jogo encontrado e pronto para instalação!";
+                lblPathStatus.Text = string.Format("✓ Jogo encontrado ({0}) - Pronto para instalação!", platformName);
                 btnInstall.Enabled = true;
                 btnPlay.Enabled = true;
 
@@ -341,6 +343,10 @@ namespace SuperAlloyRangerTranslator
                 progressBar.Value = 10;
                 Application.DoEvents();
 
+                string platform = DetectGamePlatform(gameDir);
+                string platformName = (platform == "epic") ? "Epic Games" : "Steam";
+                string asmResource = (platform == "epic") ? "Assembly-CSharp.epic.dll" : "Assembly-CSharp.steam.dll";
+
                 string dataDir = Path.Combine(gameDir, "Super.Alloy.Ranger_Data");
                 string managedDir = Path.Combine(dataDir, "Managed");
                 if (!Directory.Exists(managedDir)) Directory.CreateDirectory(managedDir);
@@ -358,11 +364,11 @@ namespace SuperAlloyRangerTranslator
                     File.Copy(asmDest, bakPath, false);
                 }
 
-                // 2. Extract Assembly-CSharp.dll
-                lblStatus.Text = "Instalando Assembly-CSharp.dll...";
+                // 2. Extract Assembly-CSharp.dll matching detected platform
+                lblStatus.Text = string.Format("Instalando Assembly-CSharp.dll ({0})...", platformName);
                 progressBar.Value = 50;
                 Application.DoEvents();
-                ExtractResource("Assembly-CSharp.dll", asmDest);
+                ExtractResource(asmResource, asmDest);
 
                 // 3. Extract SARTranslator.dll
                 lblStatus.Text = "Instalando SARTranslator.dll...";
@@ -382,13 +388,13 @@ namespace SuperAlloyRangerTranslator
                 ExtractResource("LEIA-ME.txt", Path.Combine(gameDir, "LEIA-ME_TRADUCAO.txt"));
 
                 progressBar.Value = 100;
-                lblStatus.Text = "Tradução instalada com sucesso!";
+                lblStatus.Text = string.Format("Tradução instalada com sucesso! ({0})", platformName);
                 lblStatus.ForeColor = Color.FromArgb(0, 230, 118);
                 btnRestore.Enabled = true;
                 btnPlay.Enabled = true;
 
                 MessageBox.Show(
-                    "Tradução em Português do Brasil (PT-BR) instalada com sucesso!\n\nVocê já pode iniciar o jogo e desfrutar da aventura totalmente em português.",
+                    string.Format("Tradução em Português do Brasil (PT-BR) instalada com sucesso para a versão {0}!\n\nVocê já pode iniciar o jogo e desfrutar da aventura totalmente em português.", platformName),
                     "Instalação Concluída",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -518,9 +524,6 @@ namespace SuperAlloyRangerTranslator
             string cur = Application.StartupPath;
             if (IsValidGameFolder(cur)) return cur;
 
-            if (IsValidGameFolder(@"X:\jogos\epic\SuperAlloyRangerKIpC3"))
-                return @"X:\jogos\epic\SuperAlloyRangerKIpC3";
-
             try
             {
                 string steamPath = Microsoft.Win32.Registry.GetValue(
@@ -588,10 +591,13 @@ namespace SuperAlloyRangerTranslator
             catch { }
 
             string[] commonRelative = new string[] {
+                @"SteamLibrary\steamapps\common\Super Alloy Ranger",
+                @"SteamLibrary\steamapps\common\SuperAlloyRanger",
+                @"Program Files (x86)\Steam\steamapps\common\Super Alloy Ranger",
+                @"Program Files\Steam\steamapps\common\Super Alloy Ranger",
                 @"jogos\epic\SuperAlloyRangerKIpC3",
                 @"Epic Games\SuperAlloyRangerKIpC3",
                 @"Games\Super Alloy Ranger",
-                @"SteamLibrary\steamapps\common\Super Alloy Ranger",
                 @"Jogos\Super Alloy Ranger",
                 @"Games\SuperAlloyRanger"
             };
@@ -609,6 +615,45 @@ namespace SuperAlloyRangerTranslator
             }
 
             return "";
+        }
+
+        public static string DetectGamePlatform(string gameDir)
+        {
+            if (string.IsNullOrEmpty(gameDir) || !Directory.Exists(gameDir)) return "unknown";
+
+            // 1. Epic Games indicator: EOSSDK dll or .egstore
+            string epicEos = Path.Combine(gameDir, @"Super.Alloy.Ranger_Data\Plugins\x86_64\EOSSDK-Win64-Shipping.dll");
+            string egstore = Path.Combine(gameDir, ".egstore");
+            if (File.Exists(epicEos) || Directory.Exists(egstore))
+            {
+                return "epic";
+            }
+
+            // 2. Steam indicator: steam_api64.dll, Steamworks.NET.txt, or path contains steamapps
+            string steamApi = Path.Combine(gameDir, @"Super.Alloy.Ranger_Data\Plugins\x86_64\steam_api64.dll");
+            string steamTxt = Path.Combine(gameDir, @"Super.Alloy.Ranger_Data\Plugins\Steamworks.NET.txt");
+            if (File.Exists(steamApi) || File.Exists(steamTxt) || gameDir.IndexOf("steamapps", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                return "steam";
+            }
+
+            // 3. Fallback based on existing original/backup file size
+            string managedDir = Path.Combine(gameDir, @"Super.Alloy.Ranger_Data\Managed");
+            string bak = Path.Combine(managedDir, "Assembly-CSharp.dll.bak_ptbr");
+            string asm = Path.Combine(managedDir, "Assembly-CSharp.dll");
+            string check = File.Exists(bak) ? bak : asm;
+            if (File.Exists(check))
+            {
+                try
+                {
+                    long len = new FileInfo(check).Length;
+                    if (len > 1200000) return "epic";
+                    return "steam";
+                }
+                catch { }
+            }
+
+            return "steam";
         }
 
         private static bool IsValidGameFolder(string path)
