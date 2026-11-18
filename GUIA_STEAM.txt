@@ -1,0 +1,103 @@
+================================================================================
+          GUIA OFICIAL DA COMUNIDADE STEAM - SUPER ALLOY RANGER PT-BR
+================================================================================
+Como acessar:
+1. Abra no navegador ou na Steam: https://steamcommunity.com/app/1944060/guides/
+2. Na barra lateral direita, clique no botão azul "Criar guia" (ou acesse diretamente https://steamcommunity.com/sharedfiles/editguide/?appid=1944060).
+3. Preencha os campos com as informações abaixo:
+
+================================================================================
+DADOS INICIAIS DO GUIA
+================================================================================
+
+Título do Guia:
+Tradução PT-BR (Português do Brasil) - Super Alloy Ranger [100% Nativa]
+
+Imagem de Prévia / Cabeçalho:
+assets\installer_bg.jpg (ou um print do jogo com o título em PT-BR)
+
+Idioma:
+Português (Brasil)
+
+Categorias (marque estas caixas):
+[X] Modding ou Configuração
+[X] Geral
+[X] Passo a passo
+
+================================================================================
+CONTEÚDO DO GUIA (Copie e cole nas seções usando a formatação BBCode da Steam)
+================================================================================
+
+[h1]🌟 Sobre a Tradução[/h1]
+Esta é a tradução definitiva de [b]Super Alloy Ranger[/b] para [b]Português do Brasil[/b]!
+Desenvolvida como uma modificação nativa ultraleve para Unity, ela garante estabilidade total, sem atrasos nas falas e sem dependência de softwares externos como BepInEx.
+
+[list]
+[*] [b]100% dos Textos Traduzidos:[/b] Campanha completa, chefes, NPCs, missões, itens, equipamentos e conquistas.
+[*] [b]Legendas Dinâmicas de Botões:[/b] Todos os prompts de controle nos menus e tutoriais foram traduzidos ([i]Pulo, Ataque, Voltar, Especial, Confirmar[/i], etc.).
+[*] [b]Desempenho Nativo Máximo:[/b] Sem perda de FPS, sem bugs no efeito máquina de escrever e sem alterar suas conquistas na Steam.
+[*] [b]Instalador Automático com 1 Clique:[/b] Detecta a pasta do jogo na Steam automaticamente e instala em segundos com sistema de backup seguro.
+[/list]
+
+[hr][/hr]
+
+[h1]📥 Download da Tradução[/h1]
+Você pode baixar a versão mais recente diretamente pelo repositório oficial no GitHub:
+
+[b]Opção Recomendada (Instalador Automático .exe):[/b]
+👉 [url=https://github.com/RexThalazar/SuperAlloyRanger-PTBR/releases/download/v1.2.0/Instalador_Traducao_SuperAlloyRanger_PTBR.exe]Clique aqui para Baixar o Instalador Automático (.exe)[/url]
+
+[b]Opção Manual (Arquivo compactado .zip):[/b]
+👉 [url=https://github.com/RexThalazar/SuperAlloyRanger-PTBR/releases/download/v1.2.0/SuperAlloyRanger_Traducao_PTBR.zip]Clique aqui para Baixar o Pacote Manual (.zip)[/url]
+
+🔗 [b]Página do Projeto no GitHub:[/b]
+[url=https://github.com/RexThalazar/SuperAlloyRanger-PTBR]https://github.com/RexThalazar/SuperAlloyRanger-PTBR[/url]
+
+[hr][/hr]
+
+[h1]🛠️ Como Instalar (Método Automático - 1 Clique)[/h1]
+[olist]
+[*] Baixe o [b]Instalador_Traducao_SuperAlloyRanger_PTBR.exe[/b].
+[*] Abra o instalador (ele detectará automaticamente sua pasta da Steam).
+[*] Verifique se apareceu a mensagem: [i]"✓ Jogo encontrado (Versão Steam) - Pronto para instalação!"[/i].
+[*] Clique no botão [b]"Instalar Tradução"[/b].
+[*] Pronto! Basta clicar em [b]"Jogar Agora"[/b] ou abrir normalmente pela sua biblioteca Steam!
+[/olist]
+
+[hr][/hr]
+
+[h1]📂 Como Instalar (Método Manual via ZIP)[/h1]
+Caso prefira instalar sem o instalador executável:
+[olist]
+[*] Baixe e extraia o arquivo [b]SuperAlloyRanger_Traducao_PTBR.zip[/b].
+[*] Abra a pasta onde o jogo está instalado na Steam ([i]Botão direito no jogo na Steam > Gerenciar > Explorar arquivos locais[/i]).
+[*] Copie a pasta [b]Super.Alloy.Ranger_Data[/b] do pacote extraído e cole na pasta raiz do jogo.
+[*] Entre na pasta [b]Versao_Steam\Super.Alloy.Ranger_Data\Managed[/b], copie o arquivo [b]Assembly-CSharp.dll[/b] e substitua dentro de [b]Super.Alloy.Ranger_Data\Managed[/b] do jogo.
+[*] Inicie o jogo!
+[/olist]
+
+[hr][/hr]
+
+[h1]🔄 Como Desinstalar / Restaurar o Original[/h1]
+Se desejar remover a tradução a qualquer momento:
+[list]
+[*] [b]Pelo Instalador:[/b] Abra o instalador novamente e clique no botão [b]"Restaurar Original"[/b].
+[*] [b]Pela Steam:[/b] Clique com o botão direito no [b]Super Alloy Ranger[/b] na sua biblioteca > [b]Propriedades[/b] > [b]Arquivos Instalados[/b] > [b]Verificar integridade dos arquivos do jogo[/b].
+[/list]
+
+[hr][/hr]
+
+[h1]☕ Apoie o Projeto[/h1]
+Se você gostou da tradução e deseja apoiar o trabalho do autor para futuros projetos e manutenções, qualquer contribuição via LivePix é muito bem-vinda:
+
+👉 [b]Chave / Link do LivePix:[/b] [i](Adicione aqui o seu link do LivePix, por exemplo: https://livepix.gg/seunome)[/i]
+
+[hr][/hr]
+
+[h1]📜 Créditos[/h1]
+[list]
+[*] [b]Tradução e Modding Nativo:[/b] RexThalazar (com auxílio técnico do Antigravity)
+[*] [b]Desenvolvedor Original:[/b] Alloy-K Studio
+[*] [b]Distribuidora:[/b] Gamera Games
+[/list]
+Se este guia te ajudou, deixe uma avaliação positiva (👍), favorite (⭐) e compartilhe com seus amigos para apoiar mais traduções!
